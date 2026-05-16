@@ -1,0 +1,2395 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دليل التغذية - khaled mohamed</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap");
+
+      :root {
+        /* ── Core backgrounds ── */
+        --bg: #0a0a0f;
+        --surface: #111118;
+        --card: #16161f;
+        --border: #1e1e2e;
+
+        /* ── Brand colors ── */
+        --cyan: #00d4d4;
+        --orange: #ff6b35;
+        --gold: #f5c842;
+        --purple: var(--purple);
+        --red: var(--red);
+        --red-light: var(--red-light);
+        --fat-green: var(--fat-green);
+
+        /* ── Text ── */
+        --text: #e8e8f0;
+        --muted: var(--muted);
+        --white: #ffffff;
+        --black: #000000;
+
+        /* ── Cover gradient stops ── */
+        --cover-bg-1: #0a0a0f;
+        --cover-bg-2: #0d0d18;
+        --cover-bg-3: #0f1020;
+
+        /* ── Alpha layers — change the brand color above and these follow ── */
+        --cyan-04: var(--cyan-04);
+        --cyan-08: var(--cyan-08);
+        --cyan-10: rgba(0, 212, 212, 0.1);
+        --cyan-20: rgba(0, 212, 212, 0.2);
+        --cyan-30: rgba(0, 212, 212, 0.3);
+
+        --orange-06: var(--orange-06);
+        --orange-08: var(--orange-08);
+        --orange-15: var(--orange-15);
+        --orange-20: rgba(255, 107, 53, 0.2);
+        --orange-30: rgba(255, 107, 53, 0.3);
+
+        --gold-06: var(--gold-06);
+        --gold-08: var(--gold-08);
+        --gold-10: rgba(245, 200, 66, 0.1);
+        --gold-15: var(--gold-15);
+        --gold-30: rgba(245, 200, 66, 0.3);
+
+        --purple-08: var(--purple-08);
+        --purple-25: var(--purple-25);
+
+        --white-02: var(--white-02);
+        --white-04: var(--white-04);
+        --white-05: var(--white-05);
+
+        /* ── Font sizes — edit here to resize everything ── */
+        --fs-tiny: 7px; /* bullet markers */
+        --fs-xxs: 8px; /* footer, table headers, state labels */
+        --fs-xs: 12px; /* tags, meta, small labels */
+        --fs-xs2: 12px; /* sub-item rows, inline tables */
+        --fs-sm: 14px; /* body-level small text */
+        --fs-sm2: 14px; /* intro paragraphs */
+        --fs-base: 11px; /* default body size */
+        --fs-md: 16px; /* concept headings, card names */
+        --fs-md2: 16px; /* state names */
+        --fs-lg: 16px; /* cover subtitle */
+        --fs-xl: 16px; /* client page labels */
+        --fs-2xl: 18px; /* section headings */
+        --fs-3xl: 20px; /* client macro totals */
+        --fs-4xl: 22px; /* stat numbers */
+        --fs-5xl: 26px; /* client name */
+        --fs-hero: 42px; /* cover title */
+      }
+
+      /* 2. Clean White */
+      [data-theme="clean-white"] {
+        --bg: #ffffff;
+        --surface: #f5f5f8;
+        --card: #f0f0f5;
+        --border: #d8d8e8;
+        --cyan: #2563eb;
+        --orange: #f97316;
+        --gold: #d97706;
+        --text: #111827;
+        --muted: #6b7280;
+        --cover-bg-1: #ffffff;
+        --cover-bg-2: #f5f5f8;
+        --cover-bg-3: #ebebf5;
+        --cyan-04: rgba(37, 99, 235, 0.04);
+        --cyan-08: rgba(37, 99, 235, 0.08);
+        --cyan-10: rgba(37, 99, 235, 0.1);
+        --cyan-20: rgba(37, 99, 235, 0.2);
+        --cyan-30: rgba(37, 99, 235, 0.3);
+        --orange-06: rgba(249, 115, 22, 0.06);
+        --orange-08: rgba(249, 115, 22, 0.08);
+        --orange-15: rgba(249, 115, 22, 0.15);
+        --orange-20: rgba(249, 115, 22, 0.2);
+        --orange-30: rgba(249, 115, 22, 0.3);
+        --gold-06: rgba(217, 119, 6, 0.06);
+        --gold-08: rgba(217, 119, 6, 0.08);
+        --gold-10: rgba(217, 119, 6, 0.1);
+        --gold-15: rgba(217, 119, 6, 0.15);
+        --gold-30: rgba(217, 119, 6, 0.3);
+        --white-02: rgba(0, 0, 0, 0.02);
+        --white-04: rgba(0, 0, 0, 0.04);
+        --white-05: rgba(0, 0, 0, 0.05);
+        --purple-08: rgba(124, 58, 237, 0.08);
+        --purple-25: rgba(124, 58, 237, 0.25);
+      }
+
+      /* 3. Warm Parchment */
+      [data-theme="warm-parchment"] {
+        --bg: #fdf6ec;
+        --surface: #f5ecd6;
+        --card: #ede3cc;
+        --border: #d4c4a0;
+        --cyan: #c2693d;
+        --orange: #8b5e3c;
+        --gold: #9a6b2a;
+        --text: #2c1a0e;
+        --muted: #9a7a5a;
+        --cover-bg-1: #fdf6ec;
+        --cover-bg-2: #f5ecd6;
+        --cover-bg-3: #ede3cc;
+        --cyan-04: rgba(194, 105, 61, 0.04);
+        --cyan-08: rgba(194, 105, 61, 0.08);
+        --cyan-10: rgba(194, 105, 61, 0.1);
+        --cyan-20: rgba(194, 105, 61, 0.2);
+        --cyan-30: rgba(194, 105, 61, 0.3);
+        --orange-06: rgba(139, 94, 60, 0.06);
+        --orange-08: rgba(139, 94, 60, 0.08);
+        --orange-15: rgba(139, 94, 60, 0.15);
+        --orange-20: rgba(139, 94, 60, 0.2);
+        --orange-30: rgba(139, 94, 60, 0.3);
+        --gold-06: rgba(154, 107, 42, 0.06);
+        --gold-08: rgba(154, 107, 42, 0.08);
+        --gold-10: rgba(154, 107, 42, 0.1);
+        --gold-15: rgba(154, 107, 42, 0.15);
+        --gold-30: rgba(154, 107, 42, 0.3);
+        --white-02: rgba(0, 0, 0, 0.02);
+        --white-04: rgba(0, 0, 0, 0.04);
+        --white-05: rgba(0, 0, 0, 0.05);
+        --purple-08: rgba(139, 94, 60, 0.08);
+        --purple-25: rgba(139, 94, 60, 0.25);
+      }
+
+      /* 4. Steel Blue */
+      [data-theme="steel-blue"] {
+        --bg: #0a0f18;
+        --surface: #111a28;
+        --card: #182030;
+        --border: #243040;
+        --cyan: #3b82f6;
+        --orange: #60a5fa;
+        --gold: #93c5fd;
+        --text: #e0eaf8;
+        --muted: #7090b0;
+        --cover-bg-1: #0a0f18;
+        --cover-bg-2: #0d1520;
+        --cover-bg-3: #101828;
+        --cyan-04: rgba(59, 130, 246, 0.04);
+        --cyan-08: rgba(59, 130, 246, 0.08);
+        --cyan-10: rgba(59, 130, 246, 0.1);
+        --cyan-20: rgba(59, 130, 246, 0.2);
+        --cyan-30: rgba(59, 130, 246, 0.3);
+        --orange-06: rgba(96, 165, 250, 0.06);
+        --orange-08: rgba(96, 165, 250, 0.08);
+        --orange-15: rgba(96, 165, 250, 0.15);
+        --orange-20: rgba(96, 165, 250, 0.2);
+        --orange-30: rgba(96, 165, 250, 0.3);
+        --gold-06: rgba(147, 197, 253, 0.06);
+        --gold-08: rgba(147, 197, 253, 0.08);
+        --gold-10: rgba(147, 197, 253, 0.1);
+        --gold-15: rgba(147, 197, 253, 0.15);
+        --gold-30: rgba(147, 197, 253, 0.3);
+        --white-02: rgba(255, 255, 255, 0.02);
+        --white-04: rgba(255, 255, 255, 0.04);
+        --white-05: rgba(255, 255, 255, 0.05);
+        --purple-08: rgba(59, 130, 246, 0.08);
+        --purple-25: rgba(59, 130, 246, 0.25);
+      }
+
+      /* 5. Arctic Minimal */
+      [data-theme="arctic-minimal"] {
+        --bg: #f0f4f8;
+        --surface: #e8eef6;
+        --card: #ffffff;
+        --border: #c8d8e8;
+        --cyan: #0ea5e9;
+        --orange: #0284c7;
+        --gold: #0369a1;
+        --text: #0f172a;
+        --muted: #64748b;
+        --cover-bg-1: #f0f4f8;
+        --cover-bg-2: #e8eef6;
+        --cover-bg-3: #dce6f0;
+        --cyan-04: rgba(14, 165, 233, 0.04);
+        --cyan-08: rgba(14, 165, 233, 0.08);
+        --cyan-10: rgba(14, 165, 233, 0.1);
+        --cyan-20: rgba(14, 165, 233, 0.2);
+        --cyan-30: rgba(14, 165, 233, 0.3);
+        --orange-06: rgba(2, 132, 199, 0.06);
+        --orange-08: rgba(2, 132, 199, 0.08);
+        --orange-15: rgba(2, 132, 199, 0.15);
+        --orange-20: rgba(2, 132, 199, 0.2);
+        --orange-30: rgba(2, 132, 199, 0.3);
+        --gold-06: rgba(3, 105, 161, 0.06);
+        --gold-08: rgba(3, 105, 161, 0.08);
+        --gold-10: rgba(3, 105, 161, 0.1);
+        --gold-15: rgba(3, 105, 161, 0.15);
+        --gold-30: rgba(3, 105, 161, 0.3);
+        --white-02: rgba(0, 0, 0, 0.02);
+        --white-04: rgba(0, 0, 0, 0.04);
+        --white-05: rgba(0, 0, 0, 0.05);
+        --purple-08: rgba(14, 165, 233, 0.08);
+        --purple-25: rgba(14, 165, 233, 0.25);
+      }
+
+      /* 6. Olive Dark */
+      [data-theme="olive-dark"] {
+        --bg: #0e0d08;
+        --surface: #161508;
+        --card: #1c1b0e;
+        --border: #2c2a18;
+        --cyan: #d4a843;
+        --orange: #a0845a;
+        --gold: #c8943a;
+        --text: #e8e0c8;
+        --muted: #9a9070;
+        --cover-bg-1: #0e0d08;
+        --cover-bg-2: #131208;
+        --cover-bg-3: #181610;
+        --cyan-04: rgba(212, 168, 67, 0.04);
+        --cyan-08: rgba(212, 168, 67, 0.08);
+        --cyan-10: rgba(212, 168, 67, 0.1);
+        --cyan-20: rgba(212, 168, 67, 0.2);
+        --cyan-30: rgba(212, 168, 67, 0.3);
+        --orange-06: rgba(160, 132, 90, 0.06);
+        --orange-08: rgba(160, 132, 90, 0.08);
+        --orange-15: rgba(160, 132, 90, 0.15);
+        --orange-20: rgba(160, 132, 90, 0.2);
+        --orange-30: rgba(160, 132, 90, 0.3);
+        --gold-06: rgba(200, 148, 58, 0.06);
+        --gold-08: rgba(200, 148, 58, 0.08);
+        --gold-10: rgba(200, 148, 58, 0.1);
+        --gold-15: rgba(200, 148, 58, 0.15);
+        --gold-30: rgba(200, 148, 58, 0.3);
+        --white-02: rgba(255, 255, 255, 0.02);
+        --white-04: rgba(255, 255, 255, 0.04);
+        --white-05: rgba(255, 255, 255, 0.05);
+        --purple-08: rgba(212, 168, 67, 0.08);
+        --purple-25: rgba(212, 168, 67, 0.25);
+      }
+
+      /* ── Theme Switcher UI ── */
+      #theme-switcher {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-family: "Cairo", "Tajawal", sans-serif;
+      }
+
+      #theme-toggle-btn {
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--cyan);
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 700;
+        font-family: "Cairo", "Tajawal", sans-serif;
+        cursor: pointer;
+        border-radius: 4px;
+        letter-spacing: 1px;
+      }
+
+      #theme-panel {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 8px;
+        min-width: 160px;
+      }
+
+      #theme-panel.open {
+        display: flex;
+      }
+
+      .theme-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 8px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        font-family: "Cairo", "Tajawal", sans-serif;
+        font-size: 10px;
+        color: var(--text);
+        text-align: right;
+        width: 100%;
+      }
+
+      .theme-btn:hover {
+        background: var(--border);
+      }
+      .theme-btn.active {
+        border-color: var(--cyan);
+        color: var(--cyan);
+      }
+
+      .theme-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      #theme-label {
+        font-size: 9px;
+        color: var(--muted);
+        padding: 2px 4px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Cairo", "Tajawal", sans-serif;
+        font-size: var(--fs-base);
+        line-height: 1.6;
+        direction: rtl;
+      }
+
+      /* ── PAGE STRUCTURE ── */
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 12mm 14mm;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+      }
+
+      /* ── COVER PAGE ── */
+      .cover {
+        background: linear-gradient(
+          135deg,
+          var(--cover-bg-1) 0%,
+          var(--cover-bg-2) 40%,
+          var(--cover-bg-3) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 297mm;
+        padding: 20mm;
+        position: relative;
+      }
+
+      .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 40% at 50% 20%,
+            var(--cyan-08) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 80% 80%,
+            var(--orange-06) 0%,
+            transparent 50%
+          );
+      }
+
+      .cover-brand {
+        font-size: var(--fs-base);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8mm;
+        position: relative;
+      }
+
+      .cover-brand span {
+        color: var(--cyan);
+      }
+
+      .cover-title {
+        font-size: var(--fs-hero);
+        font-weight: 900;
+        line-height: 1.1;
+        position: relative;
+        margin-bottom: 4mm;
+      }
+
+      .cover-title .line1 {
+        color: var(--white);
+        display: block;
+      }
+      .cover-title .line2 {
+        background: linear-gradient(90deg, var(--cyan), var(--orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+      }
+
+      .cover-subtitle {
+        font-size: var(--fs-lg);
+        color: var(--muted);
+        margin-top: 6mm;
+        position: relative;
+      }
+
+      .cover-divider {
+        width: 60mm;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--cyan),
+          transparent
+        );
+        margin: 8mm auto;
+        position: relative;
+      }
+
+      .cover-stats {
+        display: flex;
+        gap: 12mm;
+        justify-content: center;
+        margin-top: 10mm;
+        position: relative;
+      }
+
+      .stat-box {
+        text-align: center;
+        padding: 4mm 6mm;
+        border: 1px solid var(--border);
+        border-top: 2px solid var(--cyan);
+        background: var(--cyan-04);
+      }
+
+      .stat-num {
+        font-size: var(--fs-4xl);
+        font-weight: 900;
+        color: var(--cyan);
+        display: block;
+      }
+      .stat-label {
+        font-size: var(--fs-xs);
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+
+      /* ── SECTION HEADERS ── */
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin-bottom: 6mm;
+        padding-bottom: 3mm;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-header h2 {
+        font-size: var(--fs-2xl);
+        font-weight: 900;
+        color: var(--cyan);
+        flex: 1;
+      }
+
+      .section-number {
+        width: 8mm;
+        height: 8mm;
+        background: var(--orange);
+        color: var(--white);
+        font-size: var(--fs-sm);
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* ── ENERGY STATES ── */
+      .states-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3mm;
+        margin: 5mm 0;
+      }
+
+      .state-card {
+        padding: 4mm;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .state-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+      }
+
+      .state-maintenance::before {
+        background: var(--muted);
+      }
+      .state-catabolic::before {
+        background: var(--cyan);
+      }
+      .state-anabolic::before {
+        background: var(--orange);
+      }
+
+      .state-title {
+        font-size: var(--fs-xxs);
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 1mm;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      .state-name {
+        font-size: var(--fs-md2);
+        font-weight: 900;
+        margin-bottom: 2mm;
+      }
+
+      .state-maintenance .state-name {
+        color: var(--muted);
+      }
+      .state-catabolic .state-name {
+        color: var(--cyan);
+      }
+      .state-anabolic .state-name {
+        color: var(--orange);
+      }
+
+      .state-desc {
+        font-size: var(--fs-xs);
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ── FOOD SUBSTITUTES TABLE ── */
+      .subs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3mm;
+      }
+
+      .sub-col {
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+
+      .sub-col-header {
+        padding: 3mm 4mm;
+        font-size: var(--fs-base);
+        font-weight: 900;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+
+      .protein-col .sub-col-header {
+        background: var(--orange-15);
+        color: var(--orange);
+        border-bottom: 1px solid var(--orange-30);
+      }
+      .carb-col .sub-col-header {
+        background: var(--cyan-10);
+        color: var(--cyan);
+        border-bottom: 1px solid var(--cyan-30);
+      }
+      .fat-col .sub-col-header {
+        background: var(--gold-10);
+        color: var(--gold);
+        border-bottom: 1px solid var(--gold-30);
+      }
+
+      .sub-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5mm 4mm;
+        border-bottom: 1px solid var(--white-04);
+        font-size: var(--fs-xs2);
+      }
+
+      .sub-item:last-child {
+        border-bottom: none;
+      }
+
+      .sub-item:nth-child(even) {
+        background: var(--white-02);
+      }
+
+      .sub-name {
+        color: var(--text);
+      }
+      .sub-amount {
+        color: var(--muted);
+        font-size: var(--fs-xs);
+        font-weight: 600;
+      }
+
+      .sub-section-label {
+        padding: 2mm 4mm;
+        font-size: var(--fs-xs);
+        font-weight: 700;
+        color: var(--gold);
+        background: var(--gold-06);
+        border-bottom: 1px solid var(--gold-15);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* ── HOW TO USE SUBS ── */
+      .example-box {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-right: 3px solid var(--cyan);
+        padding: 4mm 5mm;
+        margin: 3mm 0;
+      }
+
+      .example-box .label {
+        font-size: var(--fs-xs);
+        color: var(--cyan);
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 1mm;
+      }
+
+      .example-box p {
+        font-size: var(--fs-sm);
+        line-height: 1.6;
+      }
+
+      .highlight {
+        color: var(--orange);
+        font-weight: 700;
+      }
+      .highlight-cyan {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      .warning-box {
+        background: var(--orange-06);
+        border: 1px solid var(--orange-20);
+        border-right: 3px solid var(--orange);
+        padding: 4mm 5mm;
+        margin: 3mm 0;
+        font-size: var(--fs-sm);
+      }
+
+      .warning-box .label {
+        color: var(--orange);
+        font-weight: 700;
+        font-size: var(--fs-xs);
+        letter-spacing: 1px;
+        margin-bottom: 1mm;
+      }
+
+      /* ── FAQ SECTION ── */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3mm;
+      }
+
+      .faq-item {
+        padding: 3.5mm 4mm;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-top: 2px solid transparent;
+        position: relative;
+      }
+
+      .faq-item.orange-top {
+        border-top-color: var(--orange);
+      }
+      .faq-item.cyan-top {
+        border-top-color: var(--cyan);
+      }
+      .faq-item.gold-top {
+        border-top-color: var(--gold);
+      }
+
+      .faq-q {
+        font-size: var(--fs-sm);
+        font-weight: 700;
+        color: var(--orange);
+        margin-bottom: 1.5mm;
+        line-height: 1.4;
+      }
+
+      .faq-a {
+        font-size: var(--fs-xs);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .faq-a strong {
+        color: var(--text);
+      }
+
+      /* ── SUPPLEMENTS TABLE ── */
+      .supp-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: var(--fs-sm);
+      }
+
+      .supp-table th {
+        padding: 3mm 4mm;
+        text-align: right;
+        font-size: var(--fs-xs);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+        background: var(--white-02);
+      }
+
+      .supp-table td {
+        padding: 3mm 4mm;
+        border-bottom: 1px solid var(--white-04);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+
+      .supp-table tr:last-child td {
+        border-bottom: none;
+      }
+      .supp-table tr:nth-child(even) td {
+        background: var(--white-02);
+      }
+
+      .supp-name {
+        color: var(--orange);
+        font-weight: 700;
+        font-size: var(--fs-base);
+      }
+      .supp-dose {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+      .supp-note {
+        color: var(--muted);
+        font-size: var(--fs-xs);
+      }
+
+      /* ── SUPPLEMENT CARDS ── */
+      .supp-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3mm;
+        margin-top: 4mm;
+      }
+
+      .supp-card {
+        padding: 4mm 5mm;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-top: 2px solid var(--orange);
+      }
+
+      .supp-card-name {
+        font-size: var(--fs-md);
+        font-weight: 900;
+        color: var(--orange);
+        margin-bottom: 2mm;
+      }
+
+      .supp-card-body {
+        font-size: var(--fs-xs);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .supp-card-body strong {
+        color: var(--text);
+      }
+
+      /* ── CONVERSION TABLE ── */
+      .convert-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: var(--fs-sm);
+        margin: 3mm 0;
+      }
+
+      .convert-table td {
+        padding: 2.5mm 4mm;
+        border-bottom: 1px solid var(--white-05);
+      }
+
+      .convert-table tr:nth-child(even) td {
+        background: var(--white-02);
+      }
+      .convert-from {
+        color: var(--text);
+      }
+      .convert-eq {
+        color: var(--muted);
+        text-align: center;
+        font-size: var(--fs-xxs);
+      }
+      .convert-to {
+        color: var(--cyan);
+        font-weight: 700;
+        text-align: left;
+      }
+
+      /* ── FOOTER ── */
+      .page-footer {
+        position: absolute;
+        bottom: 6mm;
+        left: 14mm;
+        right: 14mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 3mm;
+        border-top: 1px solid var(--border);
+        font-size: var(--fs-xxs);
+        color: var(--muted);
+      }
+
+      .footer-brand {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      /* ── INTRO TEXT ── */
+      .intro-text {
+        font-size: var(--fs-sm2);
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 4mm;
+      }
+
+      .concept-box {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 5mm;
+        margin: 4mm 0;
+      }
+
+      .concept-box h3 {
+        font-size: var(--fs-md);
+        font-weight: 700;
+        color: var(--cyan);
+        margin-bottom: 3mm;
+      }
+
+      .concept-points {
+        list-style: none;
+      }
+      .concept-points li {
+        padding: 2mm 0;
+        padding-right: 5mm;
+        position: relative;
+        font-size: var(--fs-sm);
+        border-bottom: 1px solid var(--white-04);
+      }
+
+      .concept-points li:last-child {
+        border-bottom: none;
+      }
+
+      .concept-points li::before {
+        content: "◆";
+        position: absolute;
+        right: 0;
+        color: var(--orange);
+        font-size: var(--fs-tiny);
+        top: 3mm;
+      }
+
+      /* ── INLINE CALLOUT ── */
+      .callout {
+        display: inline-block;
+        background: var(--cyan-08);
+        border: 1px solid var(--cyan-20);
+        padding: 1mm 3mm;
+        font-size: var(--fs-xs);
+        color: var(--cyan);
+        font-weight: 600;
+        margin: 0.5mm;
+      }
+
+      /* ── PAGE DECORATIVE ── */
+      .page-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1.5mm;
+        background: linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--orange),
+          var(--cyan)
+        );
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm;
+      }
+      .three-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3mm;
+      }
+
+      .spacer {
+        height: 4mm;
+      }
+      .spacer-sm {
+        height: 2mm;
+      }
+
+      /* ── COVER NAV LINKS ── */
+      .cover-nav-link {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+        padding-bottom: 1px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .cover-nav-link:hover {
+        color: var(--cyan);
+        border-color: var(--cyan);
+      }
+
+      @media print {
+        body {
+          background: var(--bg);
+        }
+        .page {
+          margin: 0;
+        }
+        /* Keep links visible and clickable in PDF */
+        .cover-nav-link {
+          color: inherit !important;
+          text-decoration: none !important;
+          border-bottom: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════════════════ COVER PAGE ══════════════════════════════════ -->
+    <div class="page cover">
+      <div class="cover-brand">
+        <span>khaled mohamed</span> × دليل التغذية الشامل
+      </div>
+
+      <div class="cover-divider"></div>
+      <div class="cover-subtitle">
+        <a class="cover-nav-link" href="#sec-nutrition">معلومات التغذية</a>
+        · <a class="cover-nav-link" href="#sec-diet">نظامك الغذائي</a> ·
+        <a class="cover-nav-link" href="#sec-alternatives">بدائل الأصناف</a> ·
+        <a class="cover-nav-link" href="#sec-faq">الأسئلة الشائعة</a> ·
+        <a class="cover-nav-link" href="#sec-supplements">المكملات</a>
+      </div>
+      <div class="cover-stats">
+        <div class="stat-box">
+          <span class="stat-num">٣</span>
+          <span class="stat-label">حالات الجسم</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">٢٠+</span>
+          <span class="stat-label">سؤال شائع</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">٦</span>
+          <span class="stat-label">مكملات أساسية</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ PAGE 1: NUTRITION INFO ══════════════════════════════════ -->
+    <div class="page" id="sec-nutrition">
+      <div class="page-accent"></div>
+
+      <div class="section-header">
+        <div class="section-number">١</div>
+        <h2>معلومات عن التغذية</h2>
+      </div>
+
+      <p class="intro-text">
+        هدفك هنا إنك تكمل تمرينك بالتغذية الصح اللي هتوصلك لهدفك. زي ما التمرين
+        إشارة جسمك للتغيير، فالدايت هو اللي بيوجه التغيير ده. ومن أهم عناصر
+        التغذية لتغيير شكل جسمك هو
+        <span class="highlight-cyan">ENERGY BALANCE</span> — توازن الطاقة.
+      </p>
+
+      <div class="concept-box">
+        <h3>⚡ معادلة الطاقة</h3>
+        <p
+          style="
+            font-size: var(--fs-sm);
+            color: var(--muted);
+            margin-bottom: 3mm;
+          "
+        >
+          الأكل = كمية طاقة داخلة لجسمك. السعرات الحرارية هي وحدة قياس الطاقة.
+          دايتك بيتحسب على حسب هدفك ونقطة بدايتك.
+        </p>
+      </div>
+
+      <div class="states-grid">
+        <div class="state-card state-maintenance">
+          <div class="state-title">Maintenance State</div>
+          <div class="state-name">⚖️ حالة الثبات</div>
+          <div class="state-desc">
+            لما الطاقة الداخلة = الطاقة المحروقة. جسمك مش بيزيد ولا بيقل. سعراتك
+            على قد احتياجه تماماً.
+          </div>
+        </div>
+        <div class="state-card state-catabolic">
+          <div class="state-title">Catabolic State</div>
+          <div class="state-name">🔥 حالة الهدم</div>
+          <div class="state-desc">
+            بتاكل أقل من احتياج جسمك. جسمك بيلجأ لمخازن الطاقة (جليكوجين + دهون)
+            لتعويض العجز. الخسارة بتكون أغلبها من الدهون بشرط إنك بتتمرن بانتظام
+            وشدة كويسة.
+          </div>
+        </div>
+        <div class="state-card state-anabolic">
+          <div class="state-title">Anabolic State</div>
+          <div class="state-name">💪 حالة البناء</div>
+          <div class="state-desc">
+            جسمك في فائض طاقة. الفائض بيتخزن دهون أو بيساعد البناء العضلي (بشرط
+            التقدم في التمرين). في الطبيعي بيكون مزيج بين الاتنين.
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="section-header" style="margin-top: 2mm">
+        <div
+          class="section-number"
+          style="background: var(--cyan); color: #000"
+        >
+          ٢
+        </div>
+        <h2 style="color: var(--orange)">ازاى استخدم البدائل</h2>
+      </div>
+
+      <p class="intro-text" style="font-size: var(--fs-sm)">
+        البدائل موجودة للضرورة القصوى بس — لو الأكل خلص والبيت مفهوش، أو لو
+        معزوم. انا حطتلك الأكل اللي انت طلبته وبتحبه علشان تكون مرتاح في
+        الالتزام.
+      </p>
+
+      <div class="example-box">
+        <div class="label">مثال عملي</div>
+        <p>
+          مكتوبلك <span class="highlight">١٠٠ جرام رز</span> وعايز تبدله ببطاطس
+          ← هتلاقي في جدول البدائل إن
+          <span class="highlight-cyan">١٠٠ جرام رز = ٤٠٠ جرام بطاطس</span>
+        </p>
+        <p
+          style="margin-top: 1mm; color: var(--muted); font-size: var(--fs-xs)"
+        >
+          لو مكتوبلك ٥٠ جرام رز يبقى تاخد ٢٠٠ جرام بطاطس — نفس المعادلة على أي
+          حاجة
+        </p>
+      </div>
+
+      <div
+        style="
+          background: rgba(245, 200, 66, 0.05);
+          border: 1px solid rgba(245, 200, 66, 0.2);
+          padding: 4mm;
+          margin: 3mm 0;
+        "
+      >
+        <div
+          style="
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 2mm;
+          "
+        >
+          📐 معادلات التحويل بعد الطبخ
+        </div>
+        <div class="two-col" style="font-size: var(--fs-xs2); gap: 2mm">
+          <div>
+            <div style="color: var(--text)">
+              ١٠٠ جرام رز <span style="color: var(--muted)">قبل</span> =
+              <span style="color: var(--cyan)">٢٨٠ جرام</span>
+              <span style="color: var(--muted)">بعد</span>
+            </div>
+            <div style="color: var(--text); margin-top: 1mm">
+              ١٠٠ جرام مكرونة <span style="color: var(--muted)">قبل</span> =
+              <span style="color: var(--cyan)">٢٣٠ جرام</span>
+              <span style="color: var(--muted)">بعد</span>
+            </div>
+          </div>
+          <div>
+            <div style="color: var(--text)">
+              ١٠٠ جرام بطاطس <span style="color: var(--muted)">قبل</span> =
+              <span style="color: var(--cyan)">٩٠ جرام</span>
+              <span style="color: var(--muted)">بعد</span>
+            </div>
+            <div style="color: var(--text); margin-top: 1mm">
+              ١٠٠ جرام كبدة <span style="color: var(--muted)">قبل</span> =
+              <span style="color: var(--cyan)">٧٠ جرام</span>
+              <span style="color: var(--muted)">بعد</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <div class="label">⚠️ ملحوظة مهمة</div>
+        الكارب يتوزن <strong>قبل الطبخ</strong> — لأنه بيشرب مية فبيكبر.
+        البروتين يتوزن <strong>بعد الطبخ</strong> — لأنه بيخسر نسبة من وزنه في
+        صورة مية. وزن الأكل بميزان مطبخ دقيق ضروري — من غيره النظام هيفشل.
+      </div>
+      <div class="warning-box">
+        <div class="label">⚠️ ملحوظة مهمة</div>
+        <p>
+          انتي دلوقتي <strong>بتاخدي كورتيزون </strong>. ده معناه إن في حالة
+          طبية قائمة بتتعالج، والكورتيزون نفسه بيأثر على الجسم بشكل كبير:
+          <strong>بيحبس مياه</strong>، <strong>بيزوّد الشهية</strong>، وبيغيّر
+          توزيع الدهون وسكر الدم.
+        </p>
+        <p>
+          عشان كده <strong>الميزان والأرقام مش هيعبّروا عن الحقيقة</strong> في
+          وجود الكورتيزون، وعمل عجز سعرات أو نظام تخسيس من غير إشراف طبي ممكن
+          يضر مش يفيد.
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <div class="label">⚠️ ملحوظة مهمة</div>
+        لازم تشرب 3 لتر ماء على الأقل يومياً، لأن الماية أساسية لزيادة الحرق
+        وتسهيل عملية الهضم
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         CLIENT DIET PAGE — أحمد جمال
+         ══════════════════════════════════════════════════════════════
+
+         ┌─────────────────────────────────────────────────────────────┐
+         │  🎨 ألوان العميل — غيّر هنا بس وكل الصفحة هتتغير         │
+         │                                                             │
+         │  --cl-accent      لون اسم العميل والـ accent الرئيسي       │
+         │  --cl-meal1       لون الوجبة الأولى                        │
+         │  --cl-meal2       لون السناك                               │
+         │  --cl-meal3       لون الوجبة الثانية                       │
+         │  --cl-meal4       لون الوجبة الثالثة                       │
+         │  --cl-cals        لون السعرات في الماكرو                   │
+         │  --cl-protein     لون البروتين                             │
+         │  --cl-carb        لون الكارب                              │
+         │  --cl-fat         لون الدهون                              │
+         │  --cl-expect1     لون كارت التوقع الأول                   │
+         │  --cl-expect2     لون كارت التوقع الثاني                  │
+         └─────────────────────────────────────────────────────────────┘
+    ══════════════════════════════════════════════════════════════════ -->
+    <div
+      id="sec-diet"
+      class="page client-page"
+      style="
+        --cl-accent: #ff6b35;
+        --cl-meal1: #00d4d4;
+        --cl-meal2: #ff6b35;
+        --cl-meal3: #f5c842;
+        --cl-meal4: var(--purple);
+        --cl-cals: #f5c842;
+        --cl-protein: #ff6b35;
+        --cl-carb: #00d4d4;
+        --cl-fat: var(--fat-green);
+        --cl-expect1: #f5c842;
+        --cl-expect2: #00d4d4;
+      "
+    >
+      <div class="page-accent"></div>
+
+      <style>
+        /* ── CLIENT PAGE — shared classes (used by all client pages) ── */
+        .client-page .cp-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 5mm;
+          padding-bottom: 3mm;
+          border-bottom: 1px solid var(--border);
+        }
+        .client-page .cp-label {
+          font-size: var(--fs-xs);
+          letter-spacing: 2px;
+          color: var(--muted);
+          text-transform: uppercase;
+          margin-bottom: 1mm;
+        }
+        .client-page .cp-name {
+          font-size: var(--fs-5xl);
+          font-weight: 900;
+          color: var(--cl-accent);
+        }
+        .client-page .cp-stats {
+          display: flex;
+          gap: 2mm;
+        }
+        .client-page .cp-stat {
+          text-align: center;
+          padding: 2mm 3mm;
+          border: 1px solid var(--border);
+          background: var(--card);
+          min-width: 16mm;
+        }
+        .client-page .cp-stat-val {
+          font-size: var(--fs-xl);
+          font-weight: 900;
+          color: var(--cl-accent);
+        }
+        .client-page .cp-stat-lbl {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+        }
+
+        /* ── Goal + Macro ── */
+        .client-page .cp-goal-macro {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          gap: 3mm;
+          margin-bottom: 4mm;
+        }
+        .client-page .cp-goal {
+          background: var(--card);
+          border: 1px solid var(--border);
+          border-top: 2px solid var(--cl-accent);
+          padding: 3mm 4mm;
+        }
+        .client-page .cp-goal-title {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          letter-spacing: 1px;
+          margin-bottom: 1mm;
+        }
+        .client-page .cp-goal-val {
+          font-size: var(--fs-md2);
+          font-weight: 900;
+          color: var(--cl-accent);
+        }
+        .client-page .cp-goal-note {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          margin-top: 2mm;
+          line-height: 1.5;
+        }
+        .client-page .cp-macros {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2mm;
+        }
+        .client-page .cp-macro-box {
+          text-align: center;
+          background: var(--card);
+          border: 1px solid var(--border);
+          padding: 3mm 2mm;
+        }
+        .client-page .cp-macro-box.m-cals {
+          border-top: 2px solid var(--cl-cals);
+        }
+        .client-page .cp-macro-box.m-protein {
+          border-top: 2px solid var(--cl-protein);
+        }
+        .client-page .cp-macro-box.m-carb {
+          border-top: 2px solid var(--cl-carb);
+        }
+        .client-page .cp-macro-box.m-fat {
+          border-top: 2px solid var(--cl-fat);
+        }
+        .client-page .cp-macro-val {
+          font-size: var(--fs-3xl);
+          font-weight: 900;
+          display: block;
+          line-height: 1;
+        }
+        .client-page .cp-macro-box.m-cals .cp-macro-val {
+          color: var(--cl-cals);
+        }
+        .client-page .cp-macro-box.m-protein .cp-macro-val {
+          color: var(--cl-protein);
+        }
+        .client-page .cp-macro-box.m-carb .cp-macro-val {
+          color: var(--cl-carb);
+        }
+        .client-page .cp-macro-box.m-fat .cp-macro-val {
+          color: var(--cl-fat);
+        }
+        .client-page .cp-macro-sub {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          margin-top: 0.5mm;
+        }
+        .client-page .cp-macro-lbl {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          margin-top: 1mm;
+          letter-spacing: 1px;
+        }
+
+        /* ── Meal blocks ── */
+        .client-page .cp-meal {
+          margin-bottom: 3mm;
+        }
+        .client-page .cp-meal:last-of-type {
+          margin-bottom: 4mm;
+        }
+
+        .client-page .cp-meal-header {
+          padding: 2mm 4mm;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-right-width: 3px;
+          border-right-style: solid;
+        }
+        .client-page .cp-meal-header.meal1 {
+          color: var(--cl-meal1);
+          background: color-mix(in srgb, var(--cl-meal1) 8%, transparent);
+          border-color: var(--cl-meal1);
+          border-top: 1px solid
+            color-mix(in srgb, var(--cl-meal1) 25%, transparent);
+          border-bottom: 1px solid
+            color-mix(in srgb, var(--cl-meal1) 25%, transparent);
+          border-left: 1px solid
+            color-mix(in srgb, var(--cl-meal1) 25%, transparent);
+        }
+        .client-page .cp-meal-header.meal2 {
+          color: var(--cl-meal2);
+          background: color-mix(in srgb, var(--cl-meal2) 8%, transparent);
+          border-color: var(--cl-meal2);
+          border-top: 1px solid
+            color-mix(in srgb, var(--cl-meal2) 25%, transparent);
+          border-bottom: 1px solid
+            color-mix(in srgb, var(--cl-meal2) 25%, transparent);
+          border-left: 1px solid
+            color-mix(in srgb, var(--cl-meal2) 25%, transparent);
+        }
+        .client-page .cp-meal-header.meal3 {
+          color: var(--cl-meal3);
+          background: color-mix(in srgb, var(--cl-meal3) 8%, transparent);
+          border-color: var(--cl-meal3);
+          border-top: 1px solid
+            color-mix(in srgb, var(--cl-meal3) 25%, transparent);
+          border-bottom: 1px solid
+            color-mix(in srgb, var(--cl-meal3) 25%, transparent);
+          border-left: 1px solid
+            color-mix(in srgb, var(--cl-meal3) 25%, transparent);
+        }
+        .client-page .cp-meal-header.meal4 {
+          color: var(--cl-meal4);
+          background: color-mix(in srgb, var(--cl-meal4) 8%, transparent);
+          border-color: var(--cl-meal4);
+          border-top: 1px solid
+            color-mix(in srgb, var(--cl-meal4) 25%, transparent);
+          border-bottom: 1px solid
+            color-mix(in srgb, var(--cl-meal4) 25%, transparent);
+          border-left: 1px solid
+            color-mix(in srgb, var(--cl-meal4) 25%, transparent);
+        }
+        .client-page .cp-meal-title {
+          font-size: var(--fs-base);
+          font-weight: 900;
+        }
+        .client-page .cp-meal-badge {
+          font-size: var(--fs-xs);
+          color: var(--muted);
+          direction: ltr;
+        }
+        .client-page .cp-meal-table {
+          width: 100%;
+          border-collapse: collapse;
+          border: 1px solid var(--border);
+          border-top: none;
+        }
+        .client-page .cp-meal-table tr:nth-child(odd) {
+          background: var(--card);
+        }
+        .client-page .cp-meal-table tr:nth-child(even) {
+          background: transparent;
+        }
+        .client-page .cp-meal-table td {
+          padding: 2mm 4mm;
+          font-size: var(--fs-sm);
+          border-bottom: 1px solid var(--border);
+        }
+        .client-page .cp-meal-table tr:last-child td {
+          border-bottom: none;
+        }
+        .client-page .cp-meal-table .td-food {
+          color: var(--text);
+        }
+        .client-page .cp-meal-table .td-qty {
+          color: var(--muted);
+          text-align: left;
+          direction: ltr;
+        }
+
+        /* ── Expectations ── */
+        .client-page .cp-expect {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3mm;
+        }
+        .client-page .cp-expect-card {
+          background: var(--card);
+          border: 1px solid var(--border);
+          padding: 3mm 4mm;
+        }
+        .client-page .cp-expect-card.e1 {
+          border-right: 3px solid var(--cl-expect1);
+        }
+        .client-page .cp-expect-card.e2 {
+          border-right: 3px solid var(--cl-expect2);
+        }
+        .client-page .cp-expect-lbl {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          letter-spacing: 1px;
+          margin-bottom: 1mm;
+        }
+        .client-page .cp-expect-card.e1 .cp-expect-val {
+          font-size: var(--fs-lg);
+          font-weight: 900;
+          color: var(--cl-expect1);
+        }
+        .client-page .cp-expect-card.e2 .cp-expect-val {
+          font-size: var(--fs-lg);
+          font-weight: 900;
+          color: var(--cl-expect2);
+        }
+        .client-page .cp-expect-note {
+          font-size: var(--fs-xxs);
+          color: var(--muted);
+          margin-top: 1mm;
+          line-height: 1.5;
+        }
+      </style>
+
+      <!-- ── Header ── -->
+      <div class="cp-header">
+        <div>
+          <div class="cp-label">النظام الشخصي</div>
+          <!-- ✏️ اسم العميل -->
+          <div class="cp-name">أسماء</div>
+        </div>
+        <div class="cp-stats">
+          <!-- ✏️ الإحصائيات -->
+          <div class="cp-stat">
+            <div class="cp-stat-val">90</div>
+            <div class="cp-stat-lbl">كجم</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-val">168</div>
+            <div class="cp-stat-lbl">سم</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-val">31.9</div>
+            <div class="cp-stat-lbl">BMI</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-val">10 أيام</div>
+            <div class="cp-stat-lbl">المتابعة</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Goal + Macro ── -->
+      <div class="cp-goal-macro">
+        <div class="cp-goal">
+          <div class="cp-goal-title">الهدف</div>
+          <!-- ✏️ الهدف -->
+          <div class="cp-goal-val">🔥 تنظيم + تخسيس تدريجي</div>
+          <div class="cp-goal-note">
+            <!-- ✏️ تفاصيل الهدف -->
+            بدون عجز قوي كبداية بسبب الكورتيزون<br />
+            BMR: 1634 سعر · TDEE تقديري: 1961 سعر
+          </div>
+        </div>
+
+        <div class="cp-macros">
+          <!-- ✏️ أرقام الماكرو -->
+          <div class="cp-macro-box m-cals">
+            <span class="cp-macro-val">1960</span>
+            <div class="cp-macro-sub">سعر / يوم</div>
+            <div class="cp-macro-lbl">السعرات كبداية</div>
+          </div>
+
+          <div class="cp-macro-box m-protein">
+            <span class="cp-macro-val"> جم 120</span>
+            <div class="cp-macro-sub">480 سعر</div>
+            <div class="cp-macro-lbl">بروتين</div>
+          </div>
+
+          <div class="cp-macro-box m-carb">
+            <span class="cp-macro-val"> جم 259</span>
+            <div class="cp-macro-sub">1036 سعر</div>
+          </div>
+
+          <div class="cp-macro-box m-fat">
+            <span class="cp-macro-val"> جم 49</span>
+            <div class="cp-macro-sub">441 سعر</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── الوجبة الأولى ── -->
+      <div class="cp-meal">
+        <div class="cp-meal-header meal1">
+          <!-- ✏️ اسم الوجبة وماكروها -->
+          <span class="cp-meal-title">🌅 الوجبة الأولى</span>
+          <span class="cp-meal-badge" style="color: var(--cl-cals)">
+            سعر 480 &nbsp;|&nbsp; ب: 27 &nbsp;|&nbsp; ك: 43 &nbsp;|&nbsp; د: 23
+          </span>
+        </div>
+
+        <table class="cp-meal-table">
+          <!-- ✏️ أصناف الوجبة -->
+          <tr>
+            <td class="td-food">بيض كامل</td>
+            <td class="td-qty">2 بيضة</td>
+          </tr>
+          <tr>
+            <td class="td-food">توست بني</td>
+            <td class="td-qty">2 شريحة</td>
+          </tr>
+          <tr>
+            <td class="td-food">حليب</td>
+            <td class="td-qty">200 مل</td>
+          </tr>
+          <tr>
+            <td class="td-food">زبدة فول سوداني</td>
+            <td class="td-qty">10 جم</td>
+          </tr>
+          <tr>
+            <td class="td-food">خيار / خس / طماطم</td>
+            <td class="td-qty">براحتك</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ── سناك ── -->
+      <div class="cp-meal">
+        <div class="cp-meal-header meal2">
+          <span class="cp-meal-title">☀️ سناك</span>
+          <span class="cp-meal-badge" style="color: var(--cl-cals)">
+            سعر 505 &nbsp;|&nbsp; ب: 31 &nbsp;|&nbsp; ك: 69 &nbsp;|&nbsp; د: 12
+          </span>
+        </div>
+
+        <table class="cp-meal-table">
+          <tr>
+            <td class="td-food">بطاطس أو بطاطا</td>
+            <td class="td-qty">350 جم</td>
+          </tr>
+          <tr>
+            <td class="td-food">زبادي يوناني</td>
+            <td class="td-qty">200 جم</td>
+          </tr>
+          <tr>
+            <td class="td-food">فول سوداني أو كاجو</td>
+            <td class="td-qty">15 جم</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ── الوجبة الثانية ── -->
+      <div class="cp-meal">
+        <div class="cp-meal-header meal3">
+          <span class="cp-meal-title">🌤️ الوجبة الثانية</span>
+          <span class="cp-meal-badge" style="color: var(--cl-cals)">
+            سعر 532 &nbsp;|&nbsp; ب: 37 &nbsp;|&nbsp; ك: 68 &nbsp;|&nbsp; د: 9
+          </span>
+        </div>
+
+        <table class="cp-meal-table">
+          <tr>
+            <td class="td-food">صدور فراخ</td>
+            <td class="td-qty">100 جم (بعد الطبخ)</td>
+          </tr>
+          <tr>
+            <td class="td-food">أرز</td>
+            <td class="td-qty">80 جم (قبل الطبخ)</td>
+          </tr>
+          <tr>
+            <td class="td-food">زيت زيتون</td>
+            <td class="td-qty">5 جم فقط</td>
+          </tr>
+          <tr>
+            <td class="td-food">سلطة / خيار / خس</td>
+            <td class="td-qty">براحتك</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ── الوجبة الثالثة ── -->
+      <div class="cp-meal">
+        <div class="cp-meal-header meal4">
+          <span class="cp-meal-title">🌙 الوجبة الثالثة</span>
+          <span class="cp-meal-badge" style="color: var(--cl-cals)">
+            سعر 450 &nbsp;|&nbsp; ب: 30 &nbsp;|&nbsp; ك: 71 &nbsp;|&nbsp; د: 4
+          </span>
+        </div>
+
+        <table class="cp-meal-table">
+          <tr>
+            <td class="td-food">مكرونة</td>
+            <td class="td-qty">90 جم (قبل الطبخ)</td>
+          </tr>
+          <tr>
+            <td class="td-food">سمك بلطي أو تونة مصفّاة</td>
+            <td class="td-qty">70 جم (بعد الطبخ / مصفّاة)</td>
+          </tr>
+          <tr>
+            <td class="td-food">سلطة / خيار / خس</td>
+            <td class="td-qty">براحتك</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ── التوقعات ── -->
+      <div class="cp-expect">
+        <div class="cp-expect-card e1">
+          <div class="cp-expect-lbl">⚖️ التقييم بعد 10 أيام</div>
+          <!-- ✏️ التوقعات -->
+          <div class="cp-expect-val">متوسط وزن + مقاسات</div>
+          <div class="cp-expect-note">
+            لا نعتمد على الميزان اليومي فقط لأن الكورتيزون قد يسبب احتباس مياه
+            وزيادة شهية
+          </div>
+        </div>
+
+        <div class="cp-expect-card e2">
+          <div class="cp-expect-lbl">🎯 هدف المرحلة الأولى</div>
+          <div class="cp-expect-val">تنظيم الأكل بدون عجز قوي</div>
+          <div class="cp-expect-note">
+            بعد أول 10 أيام نقرر: نثبت السعرات أو ننزل 150–200 سعر حسب استجابة
+            الجسم
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>01115254757</span>
+        <span style="color: var(--muted)">نظام أحمد جمال</span>
+        <span class="footer-brand">khaled mohamed</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ PAGE 2: FOOD SUBSTITUTES ══════════════════════════════════ -->
+    <div class="page" id="sec-alternatives">
+      <div class="page-accent"></div>
+
+      <div class="section-header">
+        <div
+          class="section-number"
+          style="background: var(--cyan); color: #000"
+        >
+          ٣
+        </div>
+        <h2>بدائل أصناف الأكل</h2>
+      </div>
+
+      <p
+        style="
+          font-size: var(--fs-xs2);
+          color: var(--muted);
+          margin-bottom: 4mm;
+        "
+      >
+        الكميات المذكورة تعادل بعضها من حيث المحتوى الغذائي — بدّل بنفس الجرامات
+        المكتوبة في نظامك
+      </p>
+
+      <div class="subs-grid">
+        <!-- PROTEIN -->
+        <div class="sub-col protein-col">
+          <div class="sub-col-header">🥩 البروتين</div>
+          <div class="sub-item">
+            <span class="sub-name">سالمون</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">جمبري</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">سمك بلطي</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">سمك بوري</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">تونة</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">لحمة حمراء</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">صدور فراخ</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">تركي</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">كبدة</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بيض كامل</span
+            ><span class="sub-amount">عدد ٤</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بياض البيض</span
+            ><span class="sub-amount">عدد ٦-٨</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بروتين باودر</span
+            ><span class="sub-amount">١ سكوب</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">لبن خالي الدسم</span
+            ><span class="sub-amount">٥٠٠ مل</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">جبنة قريش</span
+            ><span class="sub-amount">٢٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">زبادي يوناني</span
+            ><span class="sub-amount">٣٠٠ جرام</span>
+          </div>
+        </div>
+
+        <!-- CARBS -->
+        <div class="sub-col carb-col">
+          <div class="sub-col-header">🌾 الكارب</div>
+          <div class="sub-item">
+            <span class="sub-name">رز أبيض</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">مكرونة شوفان</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">فريك</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">رز بني</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">رز بسمتي</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">رز ياسمين</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بطاطا</span
+            ><span class="sub-amount">٤٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بطاطس</span
+            ><span class="sub-amount">٤٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">رايز كيك</span
+            ><span class="sub-amount">٨-٩ قطع</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">توست بني</span
+            ><span class="sub-amount">٥-٦ قطع</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">تورتيلا قمح</span
+            ><span class="sub-amount">٤ أرغفة</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">كينوا</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">شوفان</span
+            ><span class="sub-amount">١٠٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بازلاء</span
+            ><span class="sub-amount">٤٥٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">قلقاس</span
+            ><span class="sub-amount">٣٣٠ جرام</span>
+          </div>
+        </div>
+
+        <!-- FATS -->
+        <div class="sub-col fat-col">
+          <div class="sub-col-header">🥑 الدهون</div>
+          <div class="sub-item">
+            <span class="sub-name">لوز</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">عين جمل</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">كاجو</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بيكان</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">بندق</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">سوداني</span
+            ><span class="sub-amount">٢٠ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">زيت جوز الهند</span
+            ><span class="sub-amount">٣ م. صغيرة</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">زيت الزيتون</span
+            ><span class="sub-amount">١٥ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">سمنة بلدي</span
+            ><span class="sub-amount">١٥ جرام</span>
+          </div>
+          <div class="sub-item">
+            <span class="sub-name">أفوكادو</span
+            ><span class="sub-amount">٦٠ جرام</span>
+          </div>
+          <div class="sub-section-label">الخضار (قابلة للتبادل)</div>
+          <div
+            class="sub-item"
+            style="
+              font-size: var(--fs-xs);
+              color: var(--muted);
+              padding: 3mm 4mm;
+              display: block;
+              line-height: 1.6;
+            "
+          >
+            طماطم / خيار / خس / فلفل / بصل — تقدر تبدلهم ببعض بنفس الجرامات، أو
+            تقسّم وتعمل طبق سلطة
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>01115254757</span>
+        <span style="color: var(--muted)">جدول البدائل</span>
+        <span class="footer-brand">khaled mohamed</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ PAGE 3: FAQ PART 1 ══════════════════════════════════ -->
+    <div class="page" id="sec-faq">
+      <div class="page-accent"></div>
+
+      <div class="section-header">
+        <div
+          class="section-number"
+          style="background: var(--gold); color: #000"
+        >
+          ٤
+        </div>
+        <h2>أسئلة شائعة عن الدايت</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item orange-top">
+          <div class="faq-q">هل لازم أوزن أكلي؟</div>
+          <div class="faq-a">
+            آه، ميزان الأكل من أهم أدوات الدايت. من غيره في الغالب النظام هيفشل
+            بسبب مقادير مش محددة مما يقلل دقة حساب السعرات.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">هل لازم أاشرب مايه؟</div>
+          <div class="faq-a">
+            آه، لازم تشرب 3 لتر ماء على الأقل يومياً، لأن الماية أساسية لزيادة
+            الحرق وتسهيل عملية الهضم وإخراج السموم من الجسم، وكمان بتساعد في
+            تقليل الجوع و
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">أوزن أكلي قبل ولا بعد الطبخ؟</div>
+          <div class="faq-a">
+            <strong>قاعدة عامة:</strong> الكارب — قبل الطبخ. البروتين — بعد
+            الطبخ (مصادر البروتين بتخسر نسبة مياه). هتلاقي مكتوب جنب كل مصدر.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">ميعاد الأكل بيفرق؟</div>
+          <div class="faq-a">
+            مش فارق براحتك. المهم متزودش أو تقلل. معادا وجبة قبل التمرين تبقى
+            قبله بحوالي ساعة.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">هل ترتيب الوجبات بيفرق؟</div>
+          <div class="faq-a">
+            لا. العامل الأساسي هو نوع الأكل وعدد السعرات الداخلة والمحروقة على
+            مدار اليوم.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">هل ينفع أبني عضلات وأخسر دهون في نفس الوقت؟</div>
+          <div class="faq-a">
+            آه ينفع وده اسمه <strong>Body Recomposition</strong> — بس مش لأي حد.
+            بتنفع لو مبتدئ أو راجع الجيم بمساعدة muscle memory. يُفضل نركز على
+            هدف واحد cut أو bulk.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">ينفع أحط شوية لبن على شاي أو نسكافيه؟</div>
+          <div class="faq-a">
+            ينفع من ٥٠ ل١٠٠ مل لبن خالي الدسم فقط. ولا يُفضل تكراره.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">السكر الدايت بيزيد الوزن أو بيرفع الأنسولين؟</div>
+          <div class="faq-a">لا.</div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">لو جعت نص الليل اعمل ايه؟</div>
+          <div class="faq-a">طبق سلطة كبير واشرب مية كتير.</div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">هل الشيت ميل مسموحة؟</div>
+          <div class="faq-a">
+            بعد كل أسبوعين — لو ملتزم ١٠٠٪. لو أجلتها أو لغيتها خالص يبقى أفضل
+            كتير لأنها بتعطل تقدمنا.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">فيها حاجة لو وزن الأكل زاد ١٠~١٥ جرام؟</div>
+          <div class="faq-a">
+            في البروتين مش هيفرق. في الدهون والنشويات بيفرق طبعاً.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">نوع المكرونة ايه؟</div>
+          <div class="faq-a">
+            يُفضل مكرونة شوفان أو حبة كاملة — أكثر شبعاً بسبب الألياف. لو مش
+            متاحة هات العادية — الاتنين نفس السعرات.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">ينفع أفوت وجبة؟</div>
+          <div class="faq-a">
+            لا بلاش — علشان نسبة البروتين ما تقلش. تكرار الغلطة دي ممكن يعملك
+            نقص عضلات.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">أكل فاكهة براحتي في الدايت؟</div>
+          <div class="faq-a">
+            لا طبعاً — الفاكهة فيها سكريات ونشويات كتير. دخولها الدايت لازم يكون
+            بحساب.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">ينفع أبدل صدور الفراخ بوراك الفراخ؟</div>
+          <div class="faq-a">
+            لا لأن الوراك فيها دهون كتيرة جداً. لو الصدور مش متاحة بدلها بأي
+            بروتين خالي من الدهون (زبادي يوناني / بروتين باودر) — اسألني وهقلك
+            تبدل بقد ايه.
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>01115254757</span>
+        <span style="color: var(--muted)">أسئلة شائعة ١</span>
+        <span class="footer-brand">khaled mohamed</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ PAGE 4: FAQ PART 2 ══════════════════════════════════ -->
+    <div class="page">
+      <div class="page-accent"></div>
+
+      <div class="section-header">
+        <div
+          class="section-number"
+          style="background: var(--gold); color: #000"
+        >
+          ٤
+        </div>
+        <h2>أسئلة شائعة — تابع</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item orange-top">
+          <div class="faq-q">لو فاتني وجبة أكلها تاني يوم؟</div>
+          <div class="faq-a">
+            تاكل الكارب بس. البروتين لا — لأنه ملهوش مخازن. حاول ما تفوتش على قد
+            ما تقدر.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">فيها حاجة لو خربت الأكل يوم واحد؟</div>
+          <div class="faq-a">
+            لا. لكن لا يفضل. استنى التشيت ميل عشان نحقق هدفنا.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">
+            القهوة السادة والنسكافيه والشاي الأخضر مسموحة؟
+          </div>
+          <div class="faq-a">
+            آه — أي مشروبات عبارة عن مياه مغلية ولم يتم إضافة سكر عليها مسموحة.
+            السكر الدايت مسموح.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">أستخدم زيت أو زبدة في طبخ الأكل؟</div>
+          <div class="faq-a">
+            <strong>البام سبراي</strong> أفضل لأنه خالي من السعرات. أو طاسة
+            جرانيت. لو الحلين مش متاحين — نقطة زيت زيتون في منديل وامسح بيه
+            الحلة.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">أستخدم توابل عادي؟</div>
+          <div class="faq-a">
+            آه براحتك — دي اللي بتدي طعم حلو للأكل. بس ملعقة صغيرة ملح في اليوم.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">
+            ينفع أوزن الأكل بالتقدير أو المعلقة من غير ميزان مطبخ؟
+          </div>
+          <div class="faq-a">
+            لا مستحيل — الميزان هو الوحيد الدقيق والثابت. المعالق أحجامها تختلف
+            وغير ثابتة.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">ممكن أزود فاكهة / بروتين / زبادي يوناني؟</div>
+          <div class="faq-a">لا مش مسموح. لازم نمشي على النظام بالحرف.</div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">في وجبة معينة أكلها قبل التمرين؟</div>
+          <div class="faq-a">
+            لا براحتك — كلهم وجبات متكاملة وكلهم فيهم مصادر كارب بطيء الامتصاص.
+            هتكلها قبل التمرين بحوالي ساعة.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">هل التونة غلط تتاكل كل يوم؟</div>
+          <div class="faq-a">
+            آه — التونة فيها زئبق. خدها من مرتين ل٣ في الأسبوع. لو عايز تكرر:
+            <strong
+              >١٠٠ جرام تونة = ١٠٠ جرام صدور بعد الطبخ = ١٦٠ جرام جبنة
+              قريش.</strong
+            >
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">هل الكبدة غلط تتاكل كل يوم؟</div>
+          <div class="faq-a">
+            الكبدة مصدر ممتاز لفيتامين A لكن ١٠٠-١٥٠ جرام فيها احتياجك كله.
+            اللجوء ليها من مرتين ل٣ في الأسبوع. الجسم مبيعرفش يتخلص من فيتامين A
+            بسهولة زي باقي الفيتامينات.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">اعمل ايه لما نفسي أكل أو أشرب حاجة مسكرة؟</div>
+          <div class="faq-a">
+            طبيعي في بداية أي نظام. الحل: زود البروتين والألياف، اشرب بيبسي
+            دايت، استخدم سكر دايت في الشاي، أو اشرب ليمون بالنعناع وسكر دايت
+            وثلج.
+          </div>
+        </div>
+
+        <div class="faq-item gold-top">
+          <div class="faq-q">في مشروبات بتحرق الدهون؟</div>
+          <div class="faq-a">
+            لا — الديتوكس مشروبات طبيعية بدون سعرات بتساعدك تشرب مياه أكتر بس.
+            مثال: مياه+ليمون+نعناع، مياه دافية+زنجبيل+ليمون.
+          </div>
+        </div>
+
+        <div class="faq-item orange-top">
+          <div class="faq-q">احسب ازاي إني بشرب ٤.٥ لتر مية؟</div>
+          <div class="faq-a">
+            الزجاجة الكبيرة = لتر ونص. لتر ونص × ٣ = ٤.٥ لتر.
+          </div>
+        </div>
+
+        <div class="faq-item cyan-top">
+          <div class="faq-q">مش قادر أشرب ٤.٥ لتر مية؟</div>
+          <div class="faq-a">
+            حاول — مسألة تعود. ممكن تضيف مشروبات بدون سعرات: ينسون، كركديه،
+            نعناع، أو أي مشروب غازي دايت.
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>01115254757</span>
+        <span style="color: var(--muted)">أسئلة شائعة ٢</span>
+        <span class="footer-brand">khaled mohamed</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ PAGE 5: SUPPLEMENTS ══════════════════════════════════ -->
+    <div class="page" id="sec-supplements">
+      <div class="page-accent"></div>
+
+      <div class="section-header">
+        <div class="section-number" style="background: var(--orange)">٥</div>
+        <h2>معلومات عامة عن المكملات</h2>
+      </div>
+
+      <p class="intro-text" style="font-size: var(--fs-sm)">
+        المكملات هي قمة الهرم بعد ما حجر الأساس اتحط من تغذية + تمرين + كارديو.
+        من اسمها <span class="highlight">بتكمّل</span> احتياجاتك — نقدر نستغني
+        عنها تماماً ونعمل shape كويس. مش أساسية ومينفعش تعتمد عليها أكتر من
+        اهتمامك بالأكل والتمرين.
+      </p>
+
+      <div class="supp-cards">
+        <div class="supp-card">
+          <div class="supp-card-name">🔬 الكرياتين</div>
+          <div class="supp-card-body">
+            أشهر وأكثر مكمل معمول عليه أبحاث علمية.
+            <strong>ايه اللي هتلاقيه:</strong> عضلاتك هتبان أممتلأ أكتر (بيحبس
+            مياه جوة العضلات)، تحسن في الأداء في آخر كل مجموعة، استشفاء أحسن،
+            زيادة عضلية وقوة على المدى البعيد. مش محتاج تعمله تحميل — تأثيره
+            تراكمي. <strong>ملاحظة:</strong> وزنك ممكن يزيد لحد كيلو (مياه جوة
+            العضلات مش تحت الجلد). استخدم <strong>مونوهايدريت العادي</strong> أو
+            HCL لو الأول بيوجع بطنك.
+          </div>
+        </div>
+
+        <div class="supp-card" style="border-top-color: var(--cyan)">
+          <div class="supp-card-name" style="color: var(--cyan)">
+            🥛 الواي بروتين
+          </div>
+          <div class="supp-card-body">
+            بيخليك تكمل احتياجك اليومي من البروتين بشكل أسهل.
+            <strong>الأيزوليت</strong> بيتشال منه اللاكتوز (سكر اللبن) فبيكون
+            اختيار أفضل للناس اللي عندها حساسية لمنتجات الألبان. الفرق الفعلي
+            مفيش غير اختلافات طفيفة في السعرات والماكروز.
+          </div>
+        </div>
+
+        <div class="supp-card" style="border-top-color: var(--gold)">
+          <div class="supp-card-name" style="color: var(--gold)">
+            ⚡ البري-وورك أوت
+          </div>
+          <div class="supp-card-body">
+            مفيد في أوقات معينة — يوم مُرهق وأكلك كان قليل، أو لو في عجز سعرات
+            كبير وطاقتك قلت. استخدمه وقت الاحتياج. لو هتستخدمه على طول — وقّفه
+            شهر كل فترة قبل ما ترجع تستخدمه، لأن جسمك هيتكيف والتأثير هيقل.
+          </div>
+        </div>
+
+        <div class="supp-card">
+          <div class="supp-card-name">🩸 السيترولين</div>
+          <div class="supp-card-body">
+            دوره الأساسي إنه يزوّد تدفق الدم للعضلة — بيديك إحساس بامب أحسن
+            وتحمّل أعلى أثناء التمرين. مش هيبني عضل لوحده ومش بديل تمرين أو أكل.
+            قيمته إنه بيخليك تؤدي في التمرين أحسن.
+            <strong>هات سيترولين ماليت</strong> — الماليت هو اللي بيمدك بالطاقة.
+          </div>
+        </div>
+
+        <div class="supp-card" style="border-top-color: var(--cyan)">
+          <div class="supp-card-name" style="color: var(--cyan)">
+            🔄 جلوتامين
+          </div>
+          <div class="supp-card-body">
+            فايدته في تحسين الجهاز الهضمي لو عندك مشكلة فيه والأكل عموماً بيتعبك
+            — في الحالة دي هاته. في دراسات قالت إنه بيدعم التعافي بعد التمرين
+            وتحسين المناعة. غير كده مش لازم.
+          </div>
+        </div>
+
+        <div class="supp-card" style="border-top-color: var(--red)">
+          <div class="supp-card-name" style="color: var(--red-light)">
+            ❌ الجينيرز
+          </div>
+          <div class="supp-card-body">
+            أكتر مكمل ملهوش لازمة وأضراره أكتر من فوايده. أغلب الأنواع فيها سكر
+            عالي جداً. السعرات اللي مكتوبة عليه للـserve مش للسكوب (ممكن
+            الـserve = ٤ سكوب). <strong>البديل:</strong> بفلوسه هات بروتين وكارب
+            منفصلين أو اعمل shake شوفان ولبن وعسل ومكسرات.
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="page-footer">
+        <span>khaled.muhammad.saad@gmail.com</span>
+        <span style="color: var(--muted)">المكملات</span>
+        <span class="footer-brand">khaled mohamed</span>
+      </div>
+    </div>
+    <!-- ══ THEME SWITCHER ══ -->
+    <div id="theme-switcher">
+      <div id="theme-panel">
+        <div id="theme-label">الثيم</div>
+      </div>
+      <button id="theme-toggle-btn" onclick="togglePanel()">🎨 الثيم</button>
+    </div>
+
+    <script>
+      const themes = [
+        {
+          id: "midnight-gold",
+          name: "Midnight Gold",
+          dot1: "#0d0d1a",
+          dot2: "#f5c842",
+        },
+        {
+          id: "clean-white",
+          name: "Clean White",
+          dot1: "#ffffff",
+          dot2: "#2563eb",
+        },
+        {
+          id: "warm-parchment",
+          name: "Warm Parchment",
+          dot1: "#fdf6ec",
+          dot2: "#c2693d",
+        },
+        {
+          id: "steel-blue",
+          name: "Steel Blue",
+          dot1: "#0a0f18",
+          dot2: "#3b82f6",
+        },
+        {
+          id: "arctic-minimal",
+          name: "Arctic Minimal",
+          dot1: "#f0f4f8",
+          dot2: "#0ea5e9",
+        },
+        {
+          id: "olive-dark",
+          name: "Olive Dark",
+          dot1: "#0e0d08",
+          dot2: "#d4a843",
+        },
+      ];
+
+      const panel = document.getElementById("theme-panel");
+      const htmlEl = document.documentElement;
+      let current = localStorage.getItem("theme") || "midnight-gold";
+
+      function applyTheme(id) {
+        if (id === "midnight-gold") htmlEl.removeAttribute("data-theme");
+        else htmlEl.setAttribute("data-theme", id);
+        current = id;
+        localStorage.setItem("theme", id);
+        document.querySelectorAll(".theme-btn").forEach((b) => {
+          b.classList.toggle("active", b.dataset.id === id);
+        });
+      }
+
+      function togglePanel() {
+        panel.classList.toggle("open");
+      }
+
+      document.addEventListener("click", (e) => {
+        if (!document.getElementById("theme-switcher").contains(e.target)) {
+          panel.classList.remove("open");
+        }
+      });
+
+      themes.forEach((t) => {
+        const btn = document.createElement("button");
+        btn.className = "theme-btn";
+        btn.dataset.id = t.id;
+        btn.innerHTML = `
+          <span style="display:flex;gap:3px;flex-shrink:0;">
+            <span class="theme-dot" style="background:${t.dot1};border:1px solid #888;"></span>
+            <span class="theme-dot" style="background:${t.dot2};border:1px solid #888;"></span>
+          </span>
+          <span>${t.name}</span>`;
+        btn.onclick = () => {
+          applyTheme(t.id);
+          panel.classList.remove("open");
+        };
+        panel.appendChild(btn);
+      });
+
+      applyTheme(current);
+    </script>
+  </body>
+</html>
