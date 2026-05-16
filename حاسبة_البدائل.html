@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حاسبة البدائل الغذائية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #0a0a0f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cairo", sans-serif;
+        padding: 20px;
+      }
+
+      .card {
+        background: #16161f;
+        border: 1px solid #1e1e2e;
+        border-radius: 16px;
+        padding: 28px 28px 24px;
+        width: 420px;
+        max-width: 100%;
+      }
+
+      /* ── Header ── */
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header-icon {
+        font-size: 36px;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .header h1 {
+        font-size: 18px;
+        font-weight: 900;
+        color: #f5c842;
+        letter-spacing: 1px;
+      }
+
+      .header p {
+        font-size: 11px;
+        color: #6b6b8a;
+        margin-top: 4px;
+        line-height: 1.5;
+      }
+
+      /* ── Tabs ── */
+      .tabs {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        flex: 1;
+        padding: 8px 4px;
+        border: 1px solid #1e1e2e;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: "Cairo", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        background: #111118;
+        color: #6b6b8a;
+        transition: all 0.15s;
+      }
+
+      .tab:hover {
+        border-color: #2e2e4e;
+        color: #a0a0c0;
+      }
+
+      .tab.active {
+        border-color: #00d4d4;
+        color: #00d4d4;
+        background: rgba(0, 212, 212, 0.08);
+      }
+
+      /* ── Form rows ── */
+      .row {
+        margin-bottom: 14px;
+      }
+
+      label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        color: #6b6b8a;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      select,
+      input[type="number"] {
+        width: 100%;
+        background: #111118;
+        border: 1px solid #1e1e2e;
+        color: #e8e8f0;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-family: "Cairo", sans-serif;
+        font-size: 13px;
+        direction: rtl;
+        transition: border-color 0.15s;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      select:focus,
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #00d4d4;
+      }
+
+      /* ── Arrow divider ── */
+      .divider {
+        text-align: center;
+        font-size: 22px;
+        color: #2e2e4e;
+        margin: -2px 0 10px;
+        line-height: 1;
+        user-select: none;
+      }
+
+      /* ── Result ── */
+      .result-box {
+        background: rgba(0, 212, 212, 0.07);
+        border: 1px solid rgba(0, 212, 212, 0.18);
+        border-radius: 10px;
+        padding: 18px 16px;
+        text-align: center;
+        margin-top: 6px;
+        min-height: 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      #result-value {
+        font-size: 32px;
+        font-weight: 900;
+        color: #00d4d4;
+        line-height: 1;
+      }
+
+      #result-label {
+        font-size: 12px;
+        color: #6b6b8a;
+        line-height: 1.6;
+      }
+
+      /* ── Divider line ── */
+      .sep {
+        border: none;
+        border-top: 1px solid #1e1e2e;
+        margin: 20px 0 16px;
+      }
+
+      /* ── Quick examples ── */
+      .examples-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: #6b6b8a;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .examples {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .example-chip {
+        background: #111118;
+        border: 1px solid #1e1e2e;
+        border-radius: 20px;
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #a0a0c0;
+        cursor: pointer;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+
+      .example-chip:hover {
+        border-color: #f5c842;
+        color: #f5c842;
+        background: rgba(245, 200, 66, 0.06);
+      }
+
+      /* ── Footer ── */
+      .footer {
+        text-align: center;
+        font-size: 10px;
+        color: #3a3a5a;
+        margin-top: 18px;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="header-icon">⚖️</div>
+        <h1>حاسبة البدائل الغذائية</h1>
+        <p>اختار الصنف اللي عندك وادخل الكمية وهيحسبلك المكافئ</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" onclick="setTab('protein')">
+          🥩 بروتين
+        </button>
+        <button class="tab" onclick="setTab('carb')">🌾 كارب</button>
+        <button class="tab" onclick="setTab('fat')">🥑 دهون</button>
+      </div>
+
+      <!-- FROM -->
+      <div class="row">
+        <label>عندي</label>
+        <select id="sel-from" onchange="calc()"></select>
+      </div>
+
+      <!-- AMOUNT -->
+      <div class="row">
+        <label>الكمية</label>
+        <input
+          id="inp-amount"
+          type="number"
+          value="100"
+          min="0.5"
+          step="0.5"
+          oninput="calc()"
+          placeholder="أدخل الكمية"
+        />
+      </div>
+
+      <div class="divider">↕</div>
+
+      <!-- TO -->
+      <div class="row">
+        <label>أبدله بـ</label>
+        <select id="sel-to" onchange="calc()"></select>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box">
+        <div id="result-value">—</div>
+        <div id="result-label">اختار المواد وادخل الكمية</div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- Quick examples -->
+      <div class="examples-title">أمثلة سريعة</div>
+      <div class="examples" id="examples-wrap"></div>
+
+      <div class="footer">khaled mohamed · حاسبة البدائل</div>
+    </div>
+
+    <script>
+      const exchangeData = {
+        protein: [
+          { name: "سالمون", amount: 100, unit: "جرام" },
+          { name: "جمبري", amount: 100, unit: "جرام" },
+          { name: "سمك بلطي", amount: 100, unit: "جرام" },
+          { name: "سمك بوري", amount: 100, unit: "جرام" },
+          { name: "تونة", amount: 100, unit: "جرام" },
+          { name: "لحمة حمراء", amount: 100, unit: "جرام" },
+          { name: "صدور فراخ", amount: 100, unit: "جرام" },
+          { name: "تركي", amount: 100, unit: "جرام" },
+          { name: "كبدة", amount: 100, unit: "جرام" },
+          { name: "بيض كامل", amount: 4, unit: "بيضة" },
+          { name: "بياض البيض", amount: 7, unit: "بياضة" },
+          { name: "بروتين باودر", amount: 1, unit: "سكوب" },
+          { name: "لبن خالي الدسم", amount: 500, unit: "مل" },
+          { name: "جبنة قريش", amount: 200, unit: "جرام" },
+          { name: "زبادي يوناني", amount: 300, unit: "جرام" },
+        ],
+        carb: [
+          { name: "رز أبيض", amount: 100, unit: "جرام" },
+          { name: "مكرونة شوفان", amount: 100, unit: "جرام" },
+          { name: "فريك", amount: 100, unit: "جرام" },
+          { name: "رز بني", amount: 100, unit: "جرام" },
+          { name: "رز بسمتي", amount: 100, unit: "جرام" },
+          { name: "رز ياسمين", amount: 100, unit: "جرام" },
+          { name: "بطاطا", amount: 400, unit: "جرام" },
+          { name: "بطاطس", amount: 400, unit: "جرام" },
+          { name: "رايز كيك", amount: 8.5, unit: "قطعة" },
+          { name: "توست بني", amount: 5.5, unit: "قطعة" },
+          { name: "تورتيلا قمح", amount: 4, unit: "رغيف" },
+          { name: "كينوا", amount: 100, unit: "جرام" },
+          { name: "شوفان", amount: 100, unit: "جرام" },
+          { name: "بازلاء", amount: 450, unit: "جرام" },
+          { name: "قلقاس", amount: 330, unit: "جرام" },
+        ],
+        fat: [
+          { name: "لوز", amount: 20, unit: "جرام" },
+          { name: "عين جمل", amount: 20, unit: "جرام" },
+          { name: "كاجو", amount: 20, unit: "جرام" },
+          { name: "بيكان", amount: 20, unit: "جرام" },
+          { name: "بندق", amount: 20, unit: "جرام" },
+          { name: "سوداني", amount: 20, unit: "جرام" },
+          { name: "زيت جوز الهند", amount: 3, unit: "م. صغيرة" },
+          { name: "زيت الزيتون", amount: 15, unit: "جرام" },
+          { name: "سمنة بلدي", amount: 15, unit: "جرام" },
+          { name: "أفوكادو", amount: 60, unit: "جرام" },
+        ],
+      };
+
+      const quickExamples = {
+        protein: [
+          { from: 6, amount: 100, to: 13 }, // صدور فراخ → جبنة قريش
+          { from: 6, amount: 100, to: 4 }, // صدور فراخ → تونة
+          { from: 6, amount: 100, to: 14 }, // صدور فراخ → زبادي يوناني
+        ],
+        carb: [
+          { from: 0, amount: 100, to: 6 }, // رز أبيض → بطاطا
+          { from: 0, amount: 50, to: 7 }, // رز أبيض → بطاطس
+          { from: 0, amount: 100, to: 12 }, // رز أبيض → شوفان
+        ],
+        fat: [
+          { from: 0, amount: 20, to: 9 }, // لوز → أفوكادو
+          { from: 7, amount: 15, to: 0 }, // زيت زيتون → لوز
+        ],
+      };
+
+      let currentTab = "protein";
+
+      function setTab(tab) {
+        currentTab = tab;
+        document.querySelectorAll(".tab").forEach((t, i) => {
+          t.classList.toggle("active", ["protein", "carb", "fat"][i] === tab);
+        });
+        populateSelects();
+        renderExamples();
+        calc();
+      }
+
+      function populateSelects(resetTo = true) {
+        const data = exchangeData[currentTab];
+        const fromSel = document.getElementById("sel-from");
+        const toSel = document.getElementById("sel-to");
+
+        fromSel.innerHTML = data
+          .map(
+            (d, i) =>
+              `<option value="${i}">${d.name} (${d.amount} ${d.unit})</option>`,
+          )
+          .join("");
+
+        toSel.innerHTML = data
+          .map(
+            (d, i) =>
+              `<option value="${i}">${d.name} (${d.amount} ${d.unit})</option>`,
+          )
+          .join("");
+
+        if (resetTo) toSel.value = Math.min(1, data.length - 1).toString();
+      }
+
+      function calc() {
+        const data = exchangeData[currentTab];
+        const fromIdx = parseInt(document.getElementById("sel-from").value);
+        const toIdx = parseInt(document.getElementById("sel-to").value);
+        const amount = parseFloat(document.getElementById("inp-amount").value);
+        const valEl = document.getElementById("result-value");
+        const lblEl = document.getElementById("result-label");
+
+        if (isNaN(amount) || amount <= 0) {
+          valEl.textContent = "—";
+          lblEl.textContent = "أدخل كمية صحيحة";
+          return;
+        }
+
+        const from = data[fromIdx];
+        const to = data[toIdx];
+
+        if (fromIdx === toIdx) {
+          valEl.textContent = amount + " " + from.unit;
+          lblEl.textContent = "نفس الصنف — الكمية مش بتتغير";
+          return;
+        }
+
+        const raw = (amount / from.amount) * to.amount;
+
+        let display;
+        if (to.unit === "جرام" || to.unit === "مل") {
+          display = Math.round(raw);
+        } else {
+          display = Math.round(raw * 2) / 2;
+        }
+
+        valEl.textContent = display + " " + to.unit;
+        lblEl.textContent =
+          amount +
+          " " +
+          from.unit +
+          " " +
+          from.name +
+          "  =  " +
+          display +
+          " " +
+          to.unit +
+          " " +
+          to.name;
+      }
+
+      function applyExample(ex) {
+        document.getElementById("sel-from").value = ex.from;
+        document.getElementById("inp-amount").value = ex.amount;
+        document.getElementById("sel-to").value = ex.to;
+        calc();
+      }
+
+      function renderExamples() {
+        const data = exchangeData[currentTab];
+        const exs = quickExamples[currentTab] || [];
+        const wrap = document.getElementById("examples-wrap");
+
+        wrap.innerHTML = exs
+          .map((ex) => {
+            const from = data[ex.from];
+            const to = data[ex.to];
+            const raw = (ex.amount / from.amount) * to.amount;
+            const display =
+              to.unit === "جرام" || to.unit === "مل"
+                ? Math.round(raw)
+                : Math.round(raw * 2) / 2;
+
+            const label = `${ex.amount} ${from.unit} ${from.name} ← ${display} ${to.unit} ${to.name}`;
+            return `<span class="example-chip" onclick='applyExample(${JSON.stringify(ex)})'>${label}</span>`;
+          })
+          .join("");
+      }
+
+      // Init
+      populateSelects();
+      renderExamples();
+      calc();
+    </script>
+  </body>
+</html>
